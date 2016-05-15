@@ -1,0 +1,10 @@
+{% load staticfiles %}
+
+<link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}" />
+
+
+<ul>
+    <li><a href="{% url 'polls:index' %}">Polls</a></li>
+    <li><a href="{% url 'admin:index' %}">Admin</a></li>
+</ul>
+
