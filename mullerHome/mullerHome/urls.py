@@ -15,8 +15,10 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django import views
 
 urlpatterns = [
+    url(r'^$', views.BlogIndexView.as_view(), name='blogIndex'),
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
 ]
