@@ -1,6 +1,7 @@
 from django.views import generic
 
-class BlogIndexView(generic.ListView):
+
+class IndexView(generic.ListView):
     template_name = 'blogIndex.html'
     context_object_name = 'latest_question_list'
 
