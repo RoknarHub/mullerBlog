@@ -19,7 +19,7 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^$', views.BlogIndexView.as_view(), name='blogIndex'),
+    url(r'^$', views.blogIndex, name='blogIndex'),
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
 ]
