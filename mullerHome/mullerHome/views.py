@@ -15,7 +15,7 @@ def blogIndex(request):
 
 def curriculum(request):
     with open('/home/muller/DjangoApps/mullerHome/mullerHome/static/mullerHome/various/MULLER_Ian_Curriculum_Vitae.pdf', 'r') as pdf:
-        response = HttpResponse(pdf.read(), mimetype='application/pdf')
+        response = HttpResponse(pdf.read(), contenttype='application/pdf')
         response['Content-Disposition'] = 'inline;filename=MULLER_Ian_Curriculum_Vitae.pdf'
         return response
     pdf.closed
