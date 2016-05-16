@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'mullerHome.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-	'HOST' : '192.168.178.84',
+	'HOST' : 'localhost',
 	'USER' : 'master',
 	'PASSWORD' : 'black soul',
         'NAME': 'mullerBlog',
