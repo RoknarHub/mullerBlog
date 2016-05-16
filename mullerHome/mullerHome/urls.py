@@ -20,6 +20,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.blogIndex, name='blogIndex'),
+    url(r'^about/', views.curriculum, name='curriculum'),
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
 ]
