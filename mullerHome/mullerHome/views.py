@@ -1,4 +1,4 @@
-# -*- coding: ANSI_X3.4-1968 -*-
+# -*- coding: utf-8 -*-
 
 from django.views import generic
 from django.template import loader
