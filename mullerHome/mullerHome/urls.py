@@ -19,7 +19,7 @@ from . import views
 
 
 urlpatterns = [
-    url(r'^locale/$', 'myapp.views.view_locale'),
+    url(r'^locale/$', views.view_locale),
     url(r'^$', views.blogIndex, name='blogIndex'),
     url(r'^about/', views.curriculum, name='curriculum'),
     url(r'^polls/', include('polls.urls')),
