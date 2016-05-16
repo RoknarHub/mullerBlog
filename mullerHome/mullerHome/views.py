@@ -1,3 +1,5 @@
+# -*- coding: ANSI_X3.4-1968 -*-
+
 from django.views import generic
 from django.template import loader
 from django.http import HttpResponse
