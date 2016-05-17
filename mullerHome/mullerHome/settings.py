@@ -125,3 +125,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = '/home/muller/DjangoApps/mullerhome/static/'#[os.path.join(BASE_DIR, 'static')]
+STATICFILES_DIRS = [
+    '/home/muller/DjangoApps/mullerHome/mullerHome/static/',
+    os.path.join(BASE_DIR, "static"),
+
+]
