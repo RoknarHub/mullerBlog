@@ -9,6 +9,7 @@ html, body {
 #main {
   overflow:auto;
   padding-bottom:150px; /* this needs to be bigger than footer height*/
+  min-height: 100%;
 }
 
 #content {
