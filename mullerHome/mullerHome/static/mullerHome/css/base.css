@@ -11,6 +11,10 @@ html, body {
   padding-bottom:150px; /* this needs to be bigger than footer height*/
 }
 
+#content {
+    height: 100%;
+}
+
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
     margin-bottom: 0;
