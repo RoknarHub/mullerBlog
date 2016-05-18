@@ -3,11 +3,12 @@ html, body {
 }
 
 #wrap {
-  min-height: 100%;
+    min-height: 100%;
+    overflow:hidden;
 }
 
 #main {
-  min-height: 100%;
+    min-height: 100%;
 }
 
 #content {
@@ -27,6 +28,8 @@ html, body {
 /* Set gray background color and 100% height */
 .sidenav {
     padding-top: 20px;
+    padding-bottom: 32767px;
+    margin-bottom: -32767px;
     background-color: yellow;
     min-height: 100%;
 }
