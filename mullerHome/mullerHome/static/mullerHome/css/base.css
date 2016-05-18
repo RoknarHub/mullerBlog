@@ -12,6 +12,10 @@ html, body {
 }
 
 #content {
+    background-color:aquamarine;
+    padding-bottom: 32767px;
+    margin-bottom: -32760px;
+    height: 450px;
     min-height: 100%;
 }
 
