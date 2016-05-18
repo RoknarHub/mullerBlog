@@ -17,6 +17,7 @@ html, body {
     margin-bottom: -32760px;
     height: 450px;
     min-height: 100%;
+    overflow:auto;
 }
 
 /* Remove the navbar's default margin-bottom and rounded borders */
