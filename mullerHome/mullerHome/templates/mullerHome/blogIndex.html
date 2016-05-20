@@ -8,9 +8,9 @@
 
 {% block content %}
 
-    {% if latest_blogs_entries %}
+    {% if latest_blog_entries %}
         <ul>
-        {% for blogEntry in latest_blogs_entries %}
+        {% for blogEntry in latest_blog_entries %}
             <li><a href="{% url 'mullerHome:blogEntry' blogEntry.id  %}">{{ blogEntry.blog_title }}</a></li>
         {% endfor %}
         </ul>

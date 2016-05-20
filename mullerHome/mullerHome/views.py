@@ -6,13 +6,25 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 import io
 from .models import BlogEntry
+from time import timezone
 
 
-def blog_index(request):
-    template = loader.get_template('mullerHome/blogIndex.html')
-    latest_blogs_entries = BlogEntry.objects.order_by('-pub_date')[:5]
-    context = {'latest_blogs_entries': latest_blogs_entries}
-    return HttpResponse(template.render(context, request))
+# def blog_index(request):
+#     template = loader.get_template('mullerHome/blogIndex.html')
+#     latest_blogs_entries = BlogEntry.objects.order_by('-pub_date')[:5]
+#     context = {'latest_blogs_entries': latest_blogs_entries}
+#     return HttpResponse(template.render(context, request))
+
+class BlogIndexView(generic.ListView):
+    template_name = 'mullerHome/BlogIndex.html'
+    context_object_name = 'latest_blog_entries'
+
+    def get_queryset(self):
+        """
+        Return the last five published blog entries (not including those set to be
+        published in the future).
+        """
+        return BlogEntry.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
 
 
 def blog_entry(request, entryID):
