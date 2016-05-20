@@ -3,18 +3,32 @@
 from django.views import generic
 from django.template import loader
 from django.http import HttpResponse
+from django.shortcuts import render, get_object_or_404
 import io
+from .models import BlogEntry
 
 
-def blogIndex(request):
-
-    template = loader.get_template('mullerHome/blogIndex.html')
+def blog_index(request):
+    template = loader.get_template('mullerHome/blogBaseTemplate.html')
     context = {}
-    return HttpResponse(template.render(context,request))
+    return HttpResponse(template.render(context, request))
+
+
+def blog_entry(request, entryID):
+    blog_entry = get_object_or_404(BlogEntry, pk=entryID)
+    template = loader.get_template('mullerHome/blogEntry.html')
+    context = {
+        'title': blog_entry.blog_title,
+        'content': blog_entry.blog_content,
+        'pub_date': blog_entry.pub_date.date().__str__(),
+    }
+
+    return HttpResponse(template.render(context, request))
 
 
 def curriculum(request):
-    with open('/home/muller/DjangoApps/mullerHome/mullerHome/static/mullerHome/various/MULLER_Ian_Curriculum_Vitae.pdf', 'rb') as pdf:
+    with open('/home/muller/DjangoApps/mullerHome/mullerHome/static/mullerHome/various/MULLER_Ian_Curriculum_Vitae.pdf',
+              'rb') as pdf:
         response = HttpResponse(pdf.read(), content_type='application/pdf')
         response['Content-Disposition'] = 'inline;filename=MULLER_Ian_Curriculum_Vitae.pdf'
         return response
