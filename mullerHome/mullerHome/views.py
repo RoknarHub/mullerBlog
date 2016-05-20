@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 import io
 from .models import BlogEntry
-from time import timezone
+from django.utils import timezone
 
 
 # def blog_index(request):
