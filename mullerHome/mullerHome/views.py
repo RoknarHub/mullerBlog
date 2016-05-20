@@ -9,8 +9,9 @@ from .models import BlogEntry
 
 
 def blog_index(request):
-    template = loader.get_template('mullerHome/blogBaseTemplate.html')
-    context = {}
+    template = loader.get_template('mullerHome/blogIndex.html')
+    latest_blogs_entries = BlogEntry.objects.order_by('-pub_date')[:5]
+    context = {'latest_blogs_entries': latest_blogs_entries}
     return HttpResponse(template.render(context, request))
 
 

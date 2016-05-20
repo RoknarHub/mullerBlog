@@ -1,0 +1,26 @@
+{% extends "mullerhome/blogBaseTemplate.html" %}
+{% load staticfiles %}
+
+{% block title %}
+    Muller Blog
+{% endblock %}
+
+
+{% block content %}
+
+    {% if latest_blogs_entries %}
+        <ul>
+        {% for blogEntry in latest_blogs_entries %}
+            <li><a href="{% url 'mullerHome:blogEntry' blogEntry.id  %}">{{ blogEntry.blog_title }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No blog entries are available.</p>
+    {% endif %}
+
+{% endblock %}
+
+
+
+
+
