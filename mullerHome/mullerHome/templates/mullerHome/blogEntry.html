@@ -1,0 +1,21 @@
+{% extends "mullerHome/blogBaseTemplate.html"%}
+{% load staticfiles %}
+
+{%  block title %}
+    <title>{{ title }}</title>
+{% endblock %}
+
+{% block content%}
+    <article>
+        <header>
+            <h1>{{ title }}</h1>
+            <div class="byline">
+                <address class="author">By <a href="{% url 'mullerHome:about' %}" rel="author">Ian Muller</a></address>
+                on <time pubdate datetime="{{ pub_date}}">{{ pub_date}}</time>
+            </div>
+        </header>
+
+        {{ content }}
+    </article>
+{% endblock %}
+
