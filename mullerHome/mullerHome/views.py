@@ -28,7 +28,7 @@ class BlogIndexView(generic.ListView):
 
 
 def blog_entry(request, entryID):
-    blog_entry = get_object_or_404(BlogEntry, pk=entryID)
+    blog_entry = get_object_or_404(BlogEntry, id=entryID)
     template = loader.get_template('mullerHome/blogEntry.html')
     context = {
         'title': blog_entry.blog_title,
