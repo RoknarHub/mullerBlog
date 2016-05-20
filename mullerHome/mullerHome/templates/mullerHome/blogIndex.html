@@ -11,7 +11,7 @@
     {% if latest_blog_entries %}
         <ul>
         {% for blogEntry in latest_blog_entries %}
-            <li><a href="{% url 'mullerHome:blogEntry' blogEntry.id  %}">{{ blogEntry.blog_title }}</a></li>
+            <li><a href="{% url 'blogEntry' blogEntry.id  %}">{{ blogEntry.blog_title }}</a></li>
         {% endfor %}
         </ul>
     {% else %}
