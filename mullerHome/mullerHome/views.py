@@ -16,7 +16,7 @@ from django.utils import timezone
 #     return HttpResponse(template.render(context, request))
 
 class BlogIndexView(generic.ListView):
-    template_name = 'mullerHome/BlogIndex.html'
+    template_name = 'mullerHome/blogIndex.html'
     context_object_name = 'latest_blog_entries'
 
     def get_queryset(self):
