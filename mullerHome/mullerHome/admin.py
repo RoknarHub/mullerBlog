@@ -15,4 +15,4 @@ class BlogEntryAdmin(admin.ModelAdmin):
     list_filter = ['pub_date']
     search_fields = ['blog_title']
 
-admin.site.register(BlogEntry)
+admin.site.register(BlogEntry, BlogEntryAdmin)
