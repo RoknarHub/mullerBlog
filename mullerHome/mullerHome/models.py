@@ -11,7 +11,7 @@ class BlogEntry(models.Model):
     blog_content = models.TextField()
     blog_description = models.CharField(max_length=200)
     blog_thumbnail = models.URLField(max_length=200)
-    is_preview = models.BooleanField()
+    is_preview = models.BooleanField(True)
 
     def __str__(self):
         return self.blog_title
