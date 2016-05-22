@@ -11,6 +11,7 @@ class BlogEntry(models.Model):
     blog_content = models.TextField()
     blog_description = models.CharField(max_length=200)
     blog_thumbnail = models.URLField(max_length=200)
+    is_preview = models.BooleanField()
 
     def __str__(self):
         return self.blog_title
@@ -21,6 +22,11 @@ class BlogEntry(models.Model):
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'
+
+    def blog_entry_is_released(self):
+        return not self.is_preview
+    was_published_recently.boolean = True
+    was_published_recently.short_description = 'Released?'
 
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
