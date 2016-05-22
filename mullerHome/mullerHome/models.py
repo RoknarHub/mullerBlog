@@ -25,8 +25,8 @@ class BlogEntry(models.Model):
 
     def blog_entry_is_released(self):
         return not self.is_preview
-    was_published_recently.boolean = True
-    was_published_recently.short_description = 'Released?'
+    blog_entry_is_released.boolean = True
+    blog_entry_is_released.short_description = 'Released?'
 
     def get_absolute_url(self):
         from django.core.urlresolvers import reverse
