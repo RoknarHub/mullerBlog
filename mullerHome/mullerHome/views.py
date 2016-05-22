@@ -51,7 +51,7 @@ def curriculum(request):
     # response = HttpResponse(pdf, content_type='application/pdf')
     # response['Content-Disposition'] = 'filename=MULLER_Ian_Curriculum_Vitae.pdf'
     # return response
-    redirect(reverse('blogIndex')+'MULLER_Ian_Curriculum_Vitae.pdf')
+    redirect(reverse('blogIndex')+'/MULLER_Ian_Curriculum_Vitae.pdf')
 
 
 import locale
