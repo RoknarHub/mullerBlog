@@ -1,0 +1,41 @@
+{% extends "mullerHome/blogBaseTemplate.html" %}
+{% load staticfiles %}
+
+{%  block title %}
+    <b>About Me</b>
+{% endblock %}
+
+{% block content%}
+    <article>
+        <header>
+            <h1>MULLER Ian<br><br></h1>
+        </header>
+        
+        
+        <div class="about">
+            <p id="academia">
+                My name is Ian Muller. Born and raised in Luxembourg. <br>
+                I did my <a href="http://wwwen.uni.lu/formations/fstc/bachelor_en_informatique_professionnel">Bachelor in Computer Science</a> at the University of Luxembourg.<br>
+                The thesis involved extending the dependency functionality of an experimental operating system that was the subject of a <a href="http://mocca.uni.lu/snippets/">another students phd studies</a>.<br>
+                <br>
+                I then continued my studies at the University of Luxembourg to complete my <a href="http://wwwen.uni.lu/formations/fstc/master_in_information_and_computer_sciences_academique">Master in Information and Computer Sciences</a>.<br>
+                My profile of choice was <a href="http://wwwen.uni.lu/formations/fstc/master_in_information_and_computer_sciences_academique/profiles/profile_adaptive_computing">Adaptive Computing</a>. The thesis compared Web Technologies for implementing a Web API,<br>
+                then implementing a Web API and comparing its performance vs a local solution.
+            </p>
+            <br><hr><br>
+            <p id="hobby">
+                <h2> <ul><b>Hobbies</b></ul></h2>
+                I enjoy myself a good collectible card game from time to time<br>
+                and nothing can quite scratch that itch like <a href="http://magic.wizards.com/">Magic: The gathering</a>.<br>
+                Although <a href="https://www.hextcg.com/">HEX</a> promises to shake things up a bit with its PVE. Can't wait for that.<br>
+                <br> I also enjoy <a href="https://www.games-workshop.com/en-EU/Warhammer-40-000">Warhammer 40k</a>. My main faction is Chaos Space Marines<br>
+                but I also occasionally field some Tau when I need a break from melee<br>
+                and some Sisters of Battle that are currently collecting dust whilte waiting for their model range to update.<br>
+
+                As for sport, I picked up Kendo at university and I quite enjoy it.
+            </p>
+            
+        </div>
+    </article>
+{% endblock %}
+
