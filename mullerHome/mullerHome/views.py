@@ -3,7 +3,8 @@
 from django.views import generic
 from django.template import loader
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.core.urlresolvers import reverse
+from django.shortcuts import render, redirect, get_object_or_404
 import io
 from .models import BlogEntry
 from django.utils import timezone
@@ -24,11 +25,13 @@ class BlogIndexView(generic.ListView):
         Return the last five published blog entries (not including those set to be
         published in the future).
         """
-        return BlogEntry.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date')[:5]
+        return BlogEntry.objects.filter(pub_date__lte=timezone.now()).order_by('-pub_date').exclude(is_preview=True)[:5]
 
 
 def blog_entry(request, entryID):
     blog_entry = get_object_or_404(BlogEntry, pk=entryID)
+    if (blog_entry.is_preview and not request.user.is_authenticated()):
+        return redirect(reverse('blogIndex'))
     template = loader.get_template('mullerHome/blogEntry.html')
     context = {
         'title': blog_entry.blog_title,
