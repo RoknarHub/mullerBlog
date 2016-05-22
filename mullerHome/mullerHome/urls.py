@@ -22,8 +22,8 @@ urlpatterns = [
     url(r'^locale/$', views.view_locale),
     url(r'^$', views.BlogIndexView.as_view(), name='blogIndex'),
     url(r'^(?P<entryID>[0-9]+)/$', views.blog_entry, name='blogEntry'),
-    url(r'^about/', views.about, name='about'),
     url(r'^about/curriculum', views.curriculum, name='curriculum'),
+    url(r'^about/', views.about, name='about'),
     url(r'^polls/', include('polls.urls')),
     url(r'^admin/', admin.site.urls),
 ]
