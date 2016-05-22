@@ -1,3 +1,25 @@
+html, body {
+    height: 100%
+}
+
+#wrap {
+    min-height: 100%;
+    overflow:hidden;
+}
+
+#main {
+    min-height: 100%;
+}
+
+#content {
+    background-color:aquamarine;
+    padding-bottom: 32767px;
+    margin-bottom: -32760px;
+    height: 450px;
+    min-height: 100%;
+    overflow:auto;
+}
+
 /* Remove the navbar's default margin-bottom and rounded borders */
 .navbar {
     margin-bottom: 0;
@@ -11,16 +33,29 @@
 /* Set gray background color and 100% height */
 .sidenav {
     padding-top: 20px;
+    padding-bottom: 32767px;
+    margin-bottom: -32767px;
     background-color: yellow;
-    height: 100%;
+    min-height: 100%;
 }
 
+div.byline address{
+    display: inline;
+}
 /* Set black background color, white text and some padding */
 footer {
+    height: 50px;
+    width: 100%;
+    clear:both;
+    padding-top:20px;
     background-color: green;
     color: white;
-    padding: 15px;
+    /*padding: 15px;*/
 }
+
+/*#footer {
+    width:100%;
+}*/
 
 /* On small screens, set height to 'auto' for sidenav and grid */
 @media screen and (max-width: 767px) {
