@@ -21,3 +21,7 @@ class BlogEntry(models.Model):
     was_published_recently.admin_order_field = 'pub_date'
     was_published_recently.boolean = True
     was_published_recently.short_description = 'Published recently?'
+
+    def get_absolute_url(self):
+        from django.core.urlresolvers import reverse
+        return reverse('blogEntry', args=[str(self.id)])
