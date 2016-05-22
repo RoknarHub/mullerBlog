@@ -9,9 +9,9 @@ class BlogEntryAdmin(admin.ModelAdmin):
     fieldsets = [
         ('Blog Entry',       {'fields': ['blog_title', 'blog_content']}),
         ('Date information', {'fields': ['pub_date'], 'classes': ['collapse']}),
-        ('Blog Preview',     {'fields': ['blog_description', 'blog_thumbnail'], 'classes': ['collapse']}),
+        ('Blog Preview',     {'fields': ['blog_description', 'blog_thumbnail', 'is_preview'], 'classes': ['collapse']}),
     ]
-    list_display = ('blog_title', 'blog_description', 'pub_date', 'was_published_recently')
+    list_display = ('blog_title', 'blog_description', 'pub_date', 'was_published_recently', 'blog_entry_is_released')
     list_filter = ['pub_date']
     search_fields = ['blog_title']
 
