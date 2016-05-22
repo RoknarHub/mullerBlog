@@ -41,6 +41,10 @@ def blog_entry(request, entryID):
 
     return HttpResponse(template.render(context, request))
 
+def about(request):
+    template = loader.get_template('mullerHome/about.html')
+    context = {}
+    return HttpResponse(template.render(context, request))
 
 def curriculum(request):
     with open('/home/muller/DjangoApps/mullerHome/mullerHome/static/mullerHome/various/MULLER_Ian_Curriculum_Vitae.pdf',
