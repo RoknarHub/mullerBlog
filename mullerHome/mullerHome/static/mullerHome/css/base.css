@@ -42,6 +42,10 @@ html, body {
 div.byline address{
     display: inline;
 }
+
+div.about {
+    width: 300px;
+}
 /* Set black background color, white text and some padding */
 footer {
     height: 50px;
