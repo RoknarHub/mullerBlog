@@ -9,6 +9,7 @@ import io
 from .models import BlogEntry
 from django.utils import timezone
 from django.conf import settings
+import os
 
 
 # def blog_index(request):
