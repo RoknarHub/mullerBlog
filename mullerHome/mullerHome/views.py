@@ -8,6 +8,7 @@ from django.shortcuts import render, redirect, get_object_or_404
 import io
 from .models import BlogEntry
 from django.utils import timezone
+from django.conf import settings
 
 
 # def blog_index(request):
@@ -47,11 +48,11 @@ def about(request):
     return HttpResponse(template.render(context, request))
 
 def curriculum(request):
-    # pdf = open(reverse('blogIndex')+'MULLER_Ian_Curriculum_Vitae.pdf','rb').read()
-    # response = HttpResponse(pdf, content_type='application/pdf')
-    # response['Content-Disposition'] = 'filename=MULLER_Ian_Curriculum_Vitae.pdf'
-    # return response
-    redirect(reverse('mullerHome/various/MULLER_Ian_Curriculum_Vitae.pdf'))
+    pdf = open(os.path.join(settings.STATIC_ROOT, 'mullerHome/various/MULLER_Ian_Curriculum_Vitae.pdf'),'rb').read()
+    response = HttpResponse(pdf, content_type='application/pdf')
+    response['Content-Disposition'] = 'filename=MULLER_Ian_Curriculum_Vitae.pdf'
+    return response
+    #redirect(reverse('mullerHome/various/MULLER_Ian_Curriculum_Vitae.pdf'))
 
 
 import locale
