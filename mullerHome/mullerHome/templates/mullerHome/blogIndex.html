@@ -9,7 +9,7 @@
 {% block content %}
 
     {% if latest_blog_entries %}
-        <ul>
+        <ul id="frontpage_index">
         {% for blogEntry in latest_blog_entries %}
             <li><a href="{% url 'blogEntry' blogEntry.id  %}">{{ blogEntry.blog_title }}</a></li>
         {% endfor %}
