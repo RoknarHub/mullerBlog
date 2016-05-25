@@ -11,7 +11,19 @@
     {% if latest_blog_entries %}
         <ul id="frontpage_index">
         {% for blogEntry in latest_blog_entries %}
-            <li><a href="{% url 'blogEntry' blogEntry.id  %}">{{ blogEntry.blog_title }}</a></li>
+            <li>
+                <a href="{% url 'blogEntry' blogEntry.id  %}">
+                    <div class="panel panel-default">
+                      <div class="panel-heading">
+                        <h3 class="panel-title">{{ blogEntry.blog_title }}</h3>
+                      </div>
+                      <div class="panel-body">
+                        {{ blogEntry.blog_description }}
+                      </div>
+                    </div>
+
+                </a>
+            </li>
         {% endfor %}
         </ul>
     {% else %}

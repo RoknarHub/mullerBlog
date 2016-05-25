@@ -50,6 +50,8 @@ div.about {
 /*ul element*/
 #frontpage_index {
     list-style-type: none;
+    padding: 0px;
+    margin: 0px;
 }
 }
 /* Set black background color, white text and some padding */
