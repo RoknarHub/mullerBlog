@@ -53,6 +53,9 @@ div.about {
     padding: 0px;
     margin: 0px;
 }
+
+a.blog_preview {
+    color: inherit;
 }
 /* Set black background color, white text and some padding */
 footer {

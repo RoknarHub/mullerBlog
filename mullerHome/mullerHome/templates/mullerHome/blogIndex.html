@@ -12,7 +12,7 @@
         <ul id="frontpage_index">
         {% for blogEntry in latest_blog_entries %}
             <li>
-                <a href="{% url 'blogEntry' blogEntry.id  %}">
+                <a class="blog_preview" href="{% url 'blogEntry' blogEntry.id  %}">
                     <div class="panel panel-default">
                       <div class="panel-heading">
                         <h3 class="panel-title">{{ blogEntry.blog_title }}</h3>
